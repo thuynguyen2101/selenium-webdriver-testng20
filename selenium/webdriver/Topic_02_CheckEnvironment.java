@@ -10,7 +10,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_01_CheckEnvironment {
+public class Topic_02_CheckEnvironment {
 	WebDriver driver;
 
 	@BeforeClass
@@ -23,7 +23,7 @@ public class Topic_01_CheckEnvironment {
 
 	@Test
 	public void TC_01_ValidateCurrentUrl() {
-		
+		// Login Page Url matching
 		String loginPageUrl = driver.getCurrentUrl();
 		Assert.assertEquals(loginPageUrl, "http://demo.guru99.com/v4/");
 	}
