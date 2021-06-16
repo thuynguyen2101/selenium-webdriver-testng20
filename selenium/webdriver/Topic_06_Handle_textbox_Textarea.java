@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 public class Topic_06_Handle_textbox_Textarea {
 	WebDriver driver;
 	String emailAddress;
+	String loginPageUlr;
 
 	@BeforeClass
 	public void beforeClass() {
@@ -27,16 +28,24 @@ public class Topic_06_Handle_textbox_Textarea {
 
 	@Test
 	public void Register() {
+		loginPageUlr= driver.getCurrentUrl();
 		driver.findElement(By.xpath("//a[text()='here']")).click();
 		driver.findElement(By.xpath("//input[@name='emailid']")).sendKeys(emailAddress);
 		driver.findElement(By.xpath("//input[@name='btnLogin']")).click();
 		
+		String userID= driver.findElement(By.xpath("//td[text()='User ID :']//following-sibling::td")).getText();
+		String password= driver.findElement(By.xpath("//td[text()='Password :']//following-sibling::td")).getText();
 		
 		
 	}
 
 	@Test
 	public void Login() {
+		driver.get(loginPageUlr);
+		driver.findElement(By.name("uid")).sendKeys();
+		driver.findElement(By.name("password")).sendKeys();
+		driver.findElement(By.name("btnLogin")).click();
+		
 
 	}
 
@@ -59,6 +68,6 @@ public class Topic_06_Handle_textbox_Textarea {
 	
 	public String getrandomEmail(){
 		Random rand= new Random();
-		return "thuy"+ rand.nextInt(999999)+ "@gmail.com";
+		return "thuy"+ rand.nextInt(9999)+ "@gmail.com";
 	}
 }
