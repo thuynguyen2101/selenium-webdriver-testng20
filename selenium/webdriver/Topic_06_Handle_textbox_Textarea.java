@@ -48,7 +48,7 @@ public class Topic_06_Handle_textbox_Textarea {
 	@Test
 	public void TC_03_Create_new_Customer() {
 		driver.findElement(By.xpath("//a[text()='New Customer']")).click();
-		driver.findElement(By.name("name")).sendKeys("Nguyen Thuy");
+		driver.findElement(By.name("name")).sendKeys("Nguyen Thuy");//
 
 	}
 	@Test
